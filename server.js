@@ -1,11 +1,11 @@
 const express = require('express')
-const user = require('./policy')
+const user = require('./doctor')
 const mongoose = require('mongoose')
 const app = express()
 app.use(express.urlencoded({extended:true}));
 
 app.get('/',(req,res)=>{
-    res.sendFile(__dirname+'/policy.html')
+    res.sendFile(__dirname+'/doctor.html')
 })
 
 function generatePolicyNo() {  
@@ -19,7 +19,7 @@ function generatePolicyNo() {
 
 mongoose.connect('mongodb+srv://amrg_5612:Mongo_5612@botathon.8ytyjss.mongodb.net/Healthcare?retryWrites=true&w=majority',{useNewUrlParser: true,useUnifiedTopology: true})
 .then((res)=>{
-    app.listen(4000,()=>{
+    app.listen(4000,()=>{``
         console.log('Anya Bot')
 })
 console.log('Success')})
