@@ -1,21 +1,21 @@
 const express = require('express')
-const user = require('./doctor')
+const user = require('./insurance')
 const mongoose = require('mongoose')
 const app = express()
 app.use(express.urlencoded({extended:true}));
 
 app.get('/',(req,res)=>{
-    res.sendFile(__dirname+'/doctor.html')
+    res.sendFile(__dirname+'/insurance.html')
 })
 
-function generatePolicyNo() {  
-    var digits = '0123456789';
-    let NO = '4639';
-    for (let i = 0; i < 6; i++ ) {
-        NO += digits[Math.floor(Math.random() * 10)];
-    }
-    return NO;
-}
+// function generatePolicyNo() {  
+//     var digits = '0123456789';
+//     let NO = '4639';
+//     for (let i = 0; i < 6; i++ ) {
+//         NO += digits[Math.floor(Math.random() * 10)];
+//     }
+//     return NO;
+// }
 
 mongoose.connect('mongodb+srv://amrg_5612:Mongo_5612@botathon.8ytyjss.mongodb.net/Healthcare?retryWrites=true&w=majority',{useNewUrlParser: true,useUnifiedTopology: true})
 .then((res)=>{
